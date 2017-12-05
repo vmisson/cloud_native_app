@@ -473,11 +473,8 @@ CONFIG_NEUTRON_OVS_BRIDGE_IFACES=br-ex:eno1
 CONFIG_NEUTRON_OVS_BRIDGES_COMPUTE=br-ex  
 CONFIG_PROVISION_DEMO=n  
 
-
-## Tips for OpenStack
-
-Connect with the external network:
-* **Create network:** neutron net-create public --router:external --provider:network_type vlan 
+- Connect with the external network:
+**Create network:** neutron net-create public --router:external --provider:network_type vlan 
 --provider:physical_network extnet --provider:segmentation_id 2232
-* **Create subnet:** neutron subnet-create --name public-subnet --enable_dhcp=False 
+**Create subnet:** neutron subnet-create --name public-subnet --enable_dhcp=False 
 –allocation-pool=start=10.11.54.X,end=10.11.54.Y --gateway=10.11.54.1 public 10.11.54.1/24
